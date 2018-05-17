@@ -16,9 +16,22 @@ namespace bubblesort
 
             Write("Input:", items);
 
-           
-                //Write("Step: ", items);
-            
+            bool switched = false;
+            do
+            {
+                switched = false;
+                for (int i = 0; i <= items.Length - 2; i++)
+                {
+                    if (items[i] > items[i + 1])
+                    {
+                        var temp = items[i + 1];
+                        items[i + 1] = items[i];
+                        items[i] = temp;
+                        switched = true;
+                    }
+                }
+                Write("Step: ", items);
+            } while (switched);
 
             Write("Output:", items);
         }

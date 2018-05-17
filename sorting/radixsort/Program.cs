@@ -48,15 +48,15 @@ namespace radixsort
 
 
                 // write buckets: 
-                //for (int i = 0; i < buckets.Length; i++)
-                //{
-                //    System.Console.WriteLine("Run: " + r + " Bucket: " + i);
-                //    for (int j = 0; j < counter[i]; j++)
-                //    {
-                //        System.Console.Write(" " + buckets[i][j]);
-                //    }
-                //    System.Console.WriteLine();
-                //}
+                for (int i = 0; i < buckets.Length; i++)
+                {
+                    System.Console.WriteLine("Run: " + r + " Bucket: " + i);
+                    for (int j = 0; j < counter[i]; j++)
+                    {
+                        System.Console.Write(" " + buckets[i][j]);
+                    }
+                    System.Console.WriteLine();
+                }
 
                 items = new int[items.Length];
                 int c = 0;

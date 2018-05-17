@@ -24,7 +24,7 @@ namespace quicksort
             if (left < right)
             {
                 int pivot = Partition(items, left, right);
-
+                System.Console.Write("Pivot:" + pivot + " ");
                 Write("Step:", items);
 
                 if (pivot > 1)

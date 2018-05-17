@@ -15,7 +15,7 @@ namespace selectionsort
                 item[i] = rnd.Next(100);
             }
 
-            System.Console.Write("Input: ");
+            System.Console.Write("Input:  ");
             for (int i = 0; i < 9; i++)
             {
                 System.Console.Write(item[i] + ", ");
@@ -37,6 +37,15 @@ namespace selectionsort
                 int tmp = item[min];
                 item[min] = item[i];
                 item[i] = tmp;
+
+                System.Console.Write("Step " + i + ": ");
+                for (int k = 0; k < 9; k++)
+                {
+                    System.Console.Write(item[k] + ", ");
+                }
+                System.Console.WriteLine(item[9]);
+
+
             }
 
             System.Console.Write("Output: ");
