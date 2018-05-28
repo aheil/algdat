@@ -9,13 +9,12 @@ struct listNode {
 int main(void)
 {
   
-struct listNode  ln1 = {5, NULL}; 
-struct listNode ln2 = {7, NULL};
+    struct listNode ln1 = {5, NULL}; 
+    struct listNode ln2 = {7, NULL};
 
-ln1.lN = &ln2;               
+    ln1.lN = &ln2;               
 
-printf("%i", ln1.lN->i);            // gibt 7 aus
+    printf("%i", ln1.lN->i);            // gibt 7 aus
 
-
-  return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
