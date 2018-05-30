@@ -20,14 +20,21 @@ namespace binarysearch
             // sort elements
             a = sort(a);
 
-            int l = 0; 
-            int r = a.Length - 1; 
+            // search(x, a);
+            simplesearch(x, a);
+
+        }
+
+        static void search(int x, int[] a)
+        {
+            int l = 0;
+            int r = a.Length - 1;
             bool found = false;
             int m = -1;
 
             while (l <= r && !found)
             {
-                m = l + ((r - l)/2); // choose the middle element
+                m = m = (l + r) / 2; // choose the middle element
                 if (a[m] == x)
                 {
                     found = true;
@@ -43,7 +50,7 @@ namespace binarysearch
                         r = m - 1;
                     }
                 }
-               
+
             }
 
             System.Console.WriteLine(String.Format("Element looked for: {0}", x));
@@ -51,7 +58,32 @@ namespace binarysearch
                 System.Console.WriteLine("Element not found");
             else
                 System.Console.WriteLine(String.Format("Element found at position {0} is {1}", m, a[m]));
+        }
 
+        static void simplesearch(int x, int[] a)
+        {
+            int l = 0;
+            int r = a.Length;
+            bool found = false;
+            int m = 0;
+
+            while (l <r)
+            {
+                m = (l + r) / 2;
+                if ((a[m]) < x)
+                    l = m + 1;
+                else 
+                    r = m - 1; 
+            }
+
+            found = a[m] == x;
+
+
+            System.Console.WriteLine(String.Format("Element looked for: {0}", x));
+            if (!found)
+                System.Console.WriteLine("Element not found");
+            else
+                System.Console.WriteLine(String.Format("Element found at position {0} is {1}", m, a[m]));
         }
 
         static int[] sort(int[] a) 
