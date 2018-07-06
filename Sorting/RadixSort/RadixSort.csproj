@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>aheil.AlgDat.Sorting</RootNamespace>
   </PropertyGroup>
 
 </Project>

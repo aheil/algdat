@@ -8,6 +8,7 @@ namespace aheil.AlgDat.Sorting
         // implemented to understand the algorithm
         public int[] Sort(int[] items)
         {
+            // for each digit we need one run 
             int runs = getMaxDigits(items);
 
             // base 10 - decimal values
@@ -18,6 +19,7 @@ namespace aheil.AlgDat.Sorting
             for (int i = 0; i < buckets.Length; i++)
                 buckets[i] = new int[items.Length];
 
+            // one run per digit
             for (int r = 0; r < runs; r++)
             {
                 for (int i = 0; i < items.Length; i++)
