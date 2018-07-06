@@ -6,19 +6,34 @@ namespace aheil.AlgDat.Tests
 {
     public class Program
     {
+        static TestRunner _testRunner = null;
         /// <summary>
         /// Test Runner for implementations in the teaching examples, 
         /// </summary>
         static void Main(string[] args)
         {
-            var testRunner = new TestRunner();
+             _testRunner = new TestRunner();
 
-            // RadixSort Test
-            var unsortedList = testRunner.InitArray();
+            RadixSortTest();
+        }
+
+        private static void InsertionSortTest()
+        {
+            var unsortedList = _testRunner.InitArray();
+            var insertionSort = new InsertionSort();
+            var sortedList = insertionSort.Sort(unsortedList);
+
+            Debug.Assert(_testRunner.Verify(sortedList));
+
+        }
+
+        private static void RadixSortTest()
+        {
+            var unsortedList = _testRunner.InitArray();
             var radixSort = new RadixSort();
             var sortedList = radixSort.Sort(unsortedList);
 
-            Debug.Assert(testRunner.Verify(sortedList));
+            Debug.Assert(_testRunner.Verify(sortedList));
         }
     }
 }

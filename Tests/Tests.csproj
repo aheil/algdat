@@ -8,5 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\sorting\radixsort\radixsort.csproj" />
+    <ProjectReference Include="..\Sorting\InsertionSort\InsertionSort.csproj" />
   </ItemGroup>
 </Project>

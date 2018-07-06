@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "tests.csproj", "{C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadixSort", "..\sorting\radixsort\radixsort.csproj", "{4890B166-0F94-42AC-B591-85ED8A5F1FE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertionSort", "..\Sorting\InsertionSort\InsertionSort.csproj", "{B098057F-D2E4-4040-B5B7-1193C883296D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{4890B166-0F94-42AC-B591-85ED8A5F1FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4890B166-0F94-42AC-B591-85ED8A5F1FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4890B166-0F94-42AC-B591-85ED8A5F1FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B098057F-D2E4-4040-B5B7-1193C883296D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B098057F-D2E4-4040-B5B7-1193C883296D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B098057F-D2E4-4040-B5B7-1193C883296D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B098057F-D2E4-4040-B5B7-1193C883296D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
