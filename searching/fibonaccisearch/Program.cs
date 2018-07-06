@@ -72,8 +72,8 @@ namespace fibonaccisearch
 
             if (x < a[l + _fib[k]])
                 return fibsearch_rec(x, a, l, l + _fib[k] - 1);
-
-            return fibsearch_rec(x, a, l + _fib[k] + 1, r);
+            else 
+                return fibsearch_rec(x, a, l + _fib[k] + 1, r);
 
         }
 
@@ -88,7 +88,6 @@ namespace fibonaccisearch
                     {
                         min = j;
                     }
-
                 }
                 int tmp = a[min];
                 a[min] = a[i];

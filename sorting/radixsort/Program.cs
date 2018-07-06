@@ -1,30 +1,12 @@
 ﻿using System;
 
-namespace radixsort
+namespace aheil.AlgDat.Sorting
 {
-    class Program
+    public class RadixSort
     {
-        static void Main(string[] args)
-        {
-            // init
-            var rnd = new Random(1337);
-            var items = new int[20];
-            for (int i = 0; i < items.Length; i++)
-            {
-                items[i] = rnd.Next(100);
-            }
-
-            Write("Input:", items);
-            int[] sortedItems =  RadixSort(items);
-            Write("Output:", sortedItems);
-
-
-            // Write("Output:", sortedItems);
-        }
-
         // this radixsort implementation is not optmial, it is simply
         // implemented to understand the algorith-m
-        public static int[] RadixSort(int[] items)
+        public static int[] Sort(int[] items)
         {
             int runs = getMaxDigits(items);
 
@@ -88,16 +70,6 @@ namespace radixsort
                     runs = n;
             }
             return runs;
-        }
-
-        public static void Write(string label, int[] items)
-        {
-            System.Console.Write(label + "\t");
-            for (int i = 0; i < items.Length; i++)
-            {
-                System.Console.Write(items[i] + ", ");
-            }
-            System.Console.WriteLine(items[items.Length - 1]);
         }
     }
 }

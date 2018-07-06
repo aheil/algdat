@@ -1,20 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-struct listNode {
-    int i;                          // Datenfeld
-    struct listNode *lN;            // Zeiger auf nächsten Listeneintrag
+struct listType {
+    struct listNode *head;          // Head node for list
 };
 
-int main(void)
-{
+struct listNode {
+    int i;                          // data field
+    struct listNode *lN;            // pointer for next list node
+};
+
+ bool isEmpty(struct listType list) {
+    if (list.head == NULL) 
+        return true;
+    else
+        return false;
+};
+
+int main(void) {
   
-    struct listNode ln1 = {5, NULL}; 
-    struct listNode ln2 = {7, NULL};
+    struct listType list = { NULL };
+    
+    printf("%i", isEmpty(list));
+  
+//    struct listNode ln1 = {5, NULL}; 
+//    struct listNode ln2 = {7, NULL};
 
-    ln1.lN = &ln2;               
+//    ln1.lN = &ln2;               
 
-    printf("%i", ln1.lN->i);            // gibt 7 aus
+//    printf("%i", ln1.lN->i);            // gibt 7 aus
 
     return EXIT_SUCCESS;
 }
