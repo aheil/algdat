@@ -6,7 +6,7 @@ namespace aheil.AlgDat.Tests
     {
         public TestRunner() {}
     
-        public int[] InitArray()
+        internal int[] InitArray()
         {
 
             var rnd = new Random(1337);
@@ -20,7 +20,7 @@ namespace aheil.AlgDat.Tests
             return items;
         }
 
-        public bool Verify(int[] sortedList) {
+        internal bool Verify(int[] sortedList) {
 
             for (int i = 1; i < sortedList.Length; i++)
             {

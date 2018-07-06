@@ -5,8 +5,8 @@ namespace aheil.AlgDat.Sorting
     public class RadixSort
     {
         // this radixsort implementation is not optmial, it is simply
-        // implemented to understand the algorith-m
-        public static int[] Sort(int[] items)
+        // implemented to understand the algorithm
+        public int[] Sort(int[] items)
         {
             int runs = getMaxDigits(items);
 
@@ -25,19 +25,6 @@ namespace aheil.AlgDat.Sorting
                     int tmp = items[i] / (int)Math.Pow(10, r);
                     int key = tmp % (10);
                     buckets[key][counter[key]++] = items[i];
-                    //System.Console.WriteLine("Run " + r + " Number: " + items[i] + " Key " + key);
-                }
-
-
-                // write buckets: 
-                for (int i = 0; i < buckets.Length; i++)
-                {
-                    System.Console.WriteLine("Run: " + r + " Bucket: " + i);
-                    for (int j = 0; j < counter[i]; j++)
-                    {
-                        System.Console.Write(" " + buckets[i][j]);
-                    }
-                    System.Console.WriteLine();
                 }
 
                 items = new int[items.Length];
@@ -56,10 +43,9 @@ namespace aheil.AlgDat.Sorting
             }
 
             return items;
-
         }
 
-        public static int getMaxDigits(int[] items)
+        private int getMaxDigits(int[] items)
         {
             int n = 0;
             int runs = 0;

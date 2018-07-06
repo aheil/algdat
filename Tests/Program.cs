@@ -13,9 +13,10 @@ namespace aheil.AlgDat.Tests
         {
             var testRunner = new TestRunner();
 
+            // RadixSort Test
             var unsortedList = testRunner.InitArray();
             var radixSort = new RadixSort();
-            var sortedList = RadixSort.Sort(unsortedList);
+            var sortedList = radixSort.Sort(unsortedList);
 
             Debug.Assert(testRunner.Verify(sortedList));
         }
