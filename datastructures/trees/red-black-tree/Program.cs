@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace red_black_tree
+namespace AHeil.AlgDat.RedBlackTree
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Console.WriteLine("Hello World!");
+            var root = new Node();
         }
     }
 }
