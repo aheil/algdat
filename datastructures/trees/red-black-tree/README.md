@@ -1,0 +1,3 @@
+- most recent added node stays red 
+- never two red nodes after each other 
+- https://studyflix.de/informatik/rot-schwarz-baum-1437
