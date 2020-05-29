@@ -11,7 +11,7 @@ namespace red_black_tree.Tests
         {
             var node = new Node();
 
-            Assert.True(node.isRoot());
+            Assert.True(node.IsRoot());
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace red_black_tree.Tests
             var key = "26";
             var node = new Node(key);
 
-            Assert.True(node.isRoot());
+            Assert.True(node.IsRoot());
             Assert.Equal(node.Key, key);
         }
 
@@ -33,7 +33,7 @@ namespace red_black_tree.Tests
 
             root.Add(childNode);
 
-            Assert.True(childNode.IsLeaf);
+            Assert.True(childNode.IsLeaf());
 
         }
 
@@ -46,7 +46,7 @@ namespace red_black_tree.Tests
 
             root.Add(childNode);
 
-            Assert.True(childNode.IsLeaf);
+            Assert.True(childNode.IsLeaf());
         }
 
         [Fact]
@@ -62,9 +62,9 @@ namespace red_black_tree.Tests
             root.Add(n2);
             root.Add(n3);
 
-            Assert.True(n3.IsLeaf);
-            Assert.False(n2.IsLeaf);
-            Assert.True(n1.IsLeaf);
+            Assert.True(n3.IsLeaf());
+            Assert.False(n2.IsLeaf());
+            Assert.True(n1.IsLeaf());
         }
 
         [Fact]
@@ -89,7 +89,7 @@ namespace red_black_tree.Tests
         }
 
         [Fact]
-        public void GrandParentTetst()
+        public void GrandParentTest()
         {
             var root = new Node(35);
             var n1 = new Node(9);
@@ -98,7 +98,7 @@ namespace red_black_tree.Tests
             root.Add(n1);
             root.Add(n2);
 
-            Assert.Equal(n2.Grandparent, root);
+            Assert.Equal(n2.GrandParent, root);
         }
 
         [Fact]

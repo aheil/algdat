@@ -16,19 +16,24 @@ namespace AHeil.AlgDat.RedBlackTree
         private Color _color;
         private IComparable _key;
 
-        public Node Grandparent
+        public Node Parent
         {
-            get { return _parent._parent; }
+            get { return _parent; }
+        }
+
+        public Node GrandParent
+        {
+            get { return Parent.Parent; }
         }
 
         public Node Uncle
         {
-            get { return getUncle(); }
+            get { return GetUncle(); }
         }
 
-        private Node getUncle()
+        private Node GetUncle()
         {
-            var grandparent = Grandparent;
+            var grandparent = GrandParent;
             var left = grandparent._left;
             var right = grandparent._right;
 
@@ -47,27 +52,17 @@ namespace AHeil.AlgDat.RedBlackTree
             get { return _color == Color.Black; }
         }
 
-        public int BlackNodes
-        {
-            get { return CountBlack(); }
-        }
-
-        public bool IsLeaf
-        {
-            get { return isLeaf(); }
-        }
-
-        private bool isLeaf()
+        public bool IsLeaf()
         {
             return (_left == null && _right == null); // && _color == Color.Black);
         }
 
         public IComparable Key
         {
-            get { return getKey(); }
+            get { return GetKey(); }
         }
 
-        private IComparable getKey()
+        private IComparable GetKey()
         {
             return _key;
         }
@@ -82,14 +77,14 @@ namespace AHeil.AlgDat.RedBlackTree
             _key = key;
         }
 
-        public bool isRoot()
+        public bool IsRoot()
         {
             return _parent == null && _color == Color.Black;
         }
 
         private int CountBlack()
         {
-            if (!this.isRoot())
+            if (!this.IsRoot())
             {
                 var c = _parent.CountBlack();
                 if (this.IsBlack)
@@ -109,7 +104,7 @@ namespace AHeil.AlgDat.RedBlackTree
 
         public void Add(Node node)
         {
-            if (this.isRoot())
+            if (this.IsRoot())
                 node._color = Color.Red;
 
             if (node.Key.CompareTo(_key) < 0)
