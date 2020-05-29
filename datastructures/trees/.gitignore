@@ -1,2 +1,4 @@
-obj/
-bin/
+red-black-tree/obj/
+red-black-tree/bin/
+red-black-tree.Tests/obj/
+red-black-tree.Tests/bin/
