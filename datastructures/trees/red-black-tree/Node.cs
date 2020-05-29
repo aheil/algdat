@@ -16,6 +16,32 @@ namespace AHeil.AlgDat.RedBlackTree
         private Color _color;
         private IComparable _key;
 
+        public Node Grandparent
+        {
+            get { return _parent._parent; }
+        }
+
+        public Node Uncle
+        {
+            get { return getUncle(); }
+        }
+
+        private Node getUncle()
+        {
+            var grandparent = Grandparent;
+            var left = grandparent._left;
+            var right = grandparent._right;
+
+            if (left == _parent)
+            {
+                return right;
+            }
+            else
+            {
+                return left;
+            }
+        }
+
         public bool IsBlack
         {
             get { return _color == Color.Black; }

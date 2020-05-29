@@ -89,53 +89,81 @@ namespace red_black_tree.Tests
         }
 
         [Fact]
-        public void Colorize2Test()
+        public void GrandParentTetst()
         {
-            // 35 --> 9 --> 50
-            //       35: black
-            //       /     \
-            //  9: black     50:black
-            //                \
-            //                 57:rot
-
             var root = new Node(35);
             var n1 = new Node(9);
-            var n2 = new Node(50);
-            var n3 = new Node(57);
+            var n2 = new Node(3);
 
             root.Add(n1);
             root.Add(n2);
-            root.Add(n3);
 
-            Assert.True(root.IsBlack);
-            Assert.True(n1.IsBlack);
-            Assert.True(n2.IsBlack);
-            Assert.False(n3.IsBlack);
+            Assert.Equal(n2.Grandparent, root);
         }
 
         [Fact]
-        public void BlackNodesTest()
+        public void UncleTest()
         {
-            // 35 --> 9 --> 50
-            //       35: black
-            //       /     \
-            //  9: black     50:black
-            //                \
-            //                 57:rot
-
             var root = new Node(35);
             var n1 = new Node(9);
-            var n2 = new Node(50);
-            var n3 = new Node(57);
+            var n2 = new Node(42);
+            var n3 = new Node(5);
 
             root.Add(n1);
             root.Add(n2);
             root.Add(n3);
 
-            Assert.True(n1.IsLeaf);
-            Assert.True(n3.IsLeaf);
-
-            Assert.Equal(n1.BlackNodes, n3.BlackNodes);
+            Assert.Equal(n3.Uncle, n2);
         }
+
+        // [Fact]
+        // public void Colorize2Test()
+        // {
+        //     // 35 --> 9 --> 50
+        //     //       35: black
+        //     //       /     \
+        //     //  9: black     50:black
+        //     //                \
+        //     //                 57:rot
+
+        //     var root = new Node(35);
+        //     var n1 = new Node(9);
+        //     var n2 = new Node(50);
+        //     var n3 = new Node(57);
+
+        //     root.Add(n1);
+        //     root.Add(n2);
+        //     root.Add(n3);
+
+        //     Assert.True(root.IsBlack);
+        //     Assert.True(n1.IsBlack);
+        //     Assert.True(n2.IsBlack);
+        //     Assert.False(n3.IsBlack);
+        // }
+
+        // [Fact]
+        // public void BlackNodesTest()
+        // {
+        //     // 35 --> 9 --> 50
+        //     //       35: black
+        //     //       /     \
+        //     //  9: black     50:black
+        //     //                \
+        //     //                 57:rot
+
+        //     var root = new Node(35);
+        //     var n1 = new Node(9);
+        //     var n2 = new Node(50);
+        //     var n3 = new Node(57);
+
+        //     root.Add(n1);
+        //     root.Add(n2);
+        //     root.Add(n3);
+
+        //     Assert.True(n1.IsLeaf);
+        //     Assert.True(n3.IsLeaf);
+
+        //     Assert.Equal(n1.BlackNodes, n3.BlackNodes);
+        // }
     }
 }
